@@ -22,3 +22,7 @@ body {
 .div-grid {
   border: 1px solid black;
 }
+
+.div-grid-active {
+  background-color: black;
+}

@@ -8,4 +8,17 @@ function createDivs() {
   }
 }
 
+function addHoverListeners() {
+  const divElements = document.querySelectorAll(".div-grid");
+  const activateDiv = (element) => {
+    element.currentTarget.setAttribute("class", "div-grid-active");
+    element.currentTarget.removeEventListener("mouseenter", activateDiv);
+  };
+
+  divElements.forEach((element) => {
+    element.addEventListener("mouseenter", activateDiv);
+  });
+}
+
 createDivs();
+addHoverListeners();
