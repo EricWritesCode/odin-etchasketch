@@ -22,11 +22,11 @@ function addHoverListeners() {
 }
 
 function resizeGrid() {
-  const sizeMax = 72;
+  const SIZE_MAX = 72;
   
   const sizeInput = document.getElementById("sizeInput").valueAsNumber;
   console.log(`Resizing grid to ${sizeInput}`);
-  if (Number.isInteger(sizeInput) && sizeInput <= sizeMax && sizeInput > 1) {
+  if (Number.isInteger(sizeInput) && sizeInput <= SIZE_MAX && sizeInput > 1) {
     const gridContainer = document.getElementById("container-grid");
     while (gridContainer.firstChild) {
       gridContainer.removeChild(gridContainer.firstChild);
@@ -39,6 +39,16 @@ function resizeGrid() {
     const warnSpan = document.getElementById("warnSpan");
     warnSpan.innerText =
       "Validation error. Please enter a whole number between 2 and 72";
+  }
+}
+
+function resetGrid() {
+  const gridContainer = document.getElementById("container-grid");
+  const gridNodes = gridContainer.childNodes;
+
+  for (i=gridNodes.length-1; i; i--) {
+    let square = gridNodes[i];
+    square.setAttribute("class", "div-grid");
   }
 }
 
