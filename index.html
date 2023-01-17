@@ -9,7 +9,20 @@
     <title>Etch-A-Sketch Online - Odin Project</title>
   </head>
   <body>
-    <button id="button-grid">Change Grid</button>
+    <div id="div-resize" :>
+      <div>
+        <input
+          type="number"
+          id="sizeInput"
+          placeholder="16"
+          min="2"
+          max="72" />
+        <button type="button" id="button-grid" onclick="resizeGrid()">
+          Change Grid (Max 72)
+        </button>
+      </div>
+      <span id="warnSpan"></span>
+    </div>
     <div id="container-grid"></div>
   </body>
 </html>
